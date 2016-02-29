@@ -1,0 +1,11 @@
+<page-shell>
+  <sidebar-item [routerLink]="['Home']" label="Home"></sidebar-item>
+  <sidebar-item onclick="window.location='https://domfarolino.github.io'"     label="Blog"></sidebar-item>
+  <sidebar-item onclick="window.location='/resume'"     label="Resume"></sidebar-item>
+  <h1>{{title}} (Beta)</h1>
+  
+  <article>
+    <router-outlet></router-outlet>
+  </article>
+
+</page-shell>

@@ -1,0 +1,16 @@
+# Mac OS X
+.DS_Store
+
+# Generated Files
+*.[oa]
+*.py[co]
+
+# Annoying tilde backup files
+*~
+
+# Others
+node_modules
+.vscode
+*.log
+config/production.json
+client/assets/bower_components
