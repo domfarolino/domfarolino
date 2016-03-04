@@ -14,102 +14,102 @@
 
 <dom-module id="page-shell">
 
-<style>
+  <style>
   
-  paper-drawer-panel {
-    font-family: Roboto;
-    background-color: #ececec;
-  }
-  
-  paper-material {
-    background-color: #fff;
-    max-width: 640px;
-    width: 95%;
-    margin: 25px auto;
-    position: relative;
-  }
-
-  paper-fab {
-    position: absolute;
-    bottom: 2vh;
-    right: 2vw;
-  }
-  
-  .task-empty paper-item {
-    text-align: center;
-    padding: 25px;
-    color: #6f6f6f;
-  }
-
-  img.profile {
-    height:50px;
-    width:50px;
-    border-radius: 50%;
-    border:2px solid white;
-  }
-
-  paper-scroll-header-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /* background for toolbar when it is at its full size */
-    --paper-scroll-header-panel-full-header: {
-      background-color: blue;
-      background-size: cover;
-      background-position: 50% 80%;
-      background-repeat: no-repeat;
-      background-image: url(http://i.imgur.com/oFI1Hyk.jpg);
-    };
-    /* background for toolbar when it is condensed */
-    --paper-scroll-header-panel-condensed-header: {
-      background-color: #2979FF;
-      background-color: rgba(100, 100, 100);
-      background-color: #607D8B;
-    };
-  }
+    paper-drawer-panel {
+        font-family: Roboto;
+        background-color: #ececec;
+    }
     
-  paper-toolbar.tall {
-    background-color: transparent;
-  }
-    
-  paper-toolbar.tall .title {
-    font-size: 30px;
-    /*margin-left: 60px;*/
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-    /* Issue #15 */
-    isolation: isolate;
-  }
-    
-  paper-toolbar.tall iron-icon {
-    margin: 0 8px;
-  }
+    paper-material {
+        background-color: #fff;
+        max-width: 640px;
+        width: 95%;
+        margin: 25px auto;
+        position: relative;
+    }
 
-  paper-toolbar#navheader{
-    background: tomato;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-image: url(https://4.bp.blogspot.com/-T_k03UFtS8k/U96RDVp8ebI/AAAAAAABF5E/4107zIbo29U/s0/Google+IO+Landscape_HD.jpg);
-  }
+    paper-fab {
+        position: absolute;
+        bottom: 2vh;
+        right: 2vw;
+    }
+    
+    .task-empty paper-item {
+        text-align: center;
+        padding: 25px;
+        color: #6f6f6f;
+    }
 
-  .content {
-    font-family:Roboto;
-    padding:20px;
-    border-left: 2px solid #ececec;
-    margin:0 auto;
-    width:auto;
-  }
+    img.profile {
+        height:50px;
+        width:50px;
+        border-radius: 50%;
+        border:2px solid white;
+    }
+
+    paper-scroll-header-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* background for toolbar when it is at its full size */
+        --paper-scroll-header-panel-full-header: {
+        background-color: blue;
+        background-size: cover;
+        background-position: 50% 80% !important;
+        background-repeat: no-repeat;
+        background-image: url(../../img/background.jpg);
+        };
+        /* background for toolbar when it is condensed */
+        --paper-scroll-header-panel-condensed-header: {
+        background-color: #2979FF;
+        background-color: rgba(100, 100, 100);
+        background-color: #607D8B;
+        };
+    }
+        
+    paper-toolbar.tall {
+        background-color: transparent;
+    }
+        
+    paper-toolbar.tall #title {
+        font-size: 30px;
+        /*margin-left: 60px;*/
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+        /* Issue #15 */
+        isolation: isolate;
+    }
+        
+    paper-toolbar.tall iron-icon {
+        margin: 0 8px;
+    }
+
+    paper-toolbar#navheader{
+        background: tomato;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url(../../img/menu_background.jpg);
+    }
+
+    .content {
+        font-family:Roboto;
+        padding:20px;
+        border-left: 2px solid #ececec;
+        margin:0 auto;
+        width:auto;
+    }
   </style>
 
-    <template>
-    <paper-drawer-panel id="test">
+  <template>
+    <paper-drawer-panel id="panelParent">
       <!-- Begin drawer -->
       <paper-header-panel mode="scroll" drawer>
         <paper-toolbar id="navheader" class="tall">
-          <img class="middle profile" src="https://i.stack.imgur.com/Jt5tL.jpg?s=64&g=1">
+          <img class="middle profile" src="/client/assets/img/self.jpg">
           <div class="bottom layout vertical">
             <span>Dom Farolino</span>
             <span>domfarolino@gmail.com</span>
@@ -126,7 +126,7 @@
         <paper-toolbar class="tall">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div class="flex"></div>
-          <div class="bottom title">Dom Farolino</div>
+          <div id="title" class="bottom title">Dom Farolino</div>
         </paper-toolbar>
         <!-- Begin main body content -->
         <div class="content">
@@ -135,30 +135,24 @@
           <!-- End main body content -->
       </paper-scroll-header-panel>
     </paper-drawer-panel>
-  
-    <script>
-      // custom transformation: scale header's title
-      // glitchy when combined with angular 2 though :(
-      var title = document.querySelector('.title');
-      addEventListener('paper-header-transform', function(e) {
-        var d = e.detail;
-        var m = d.height - d.condensedHeight;
-        var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
-        Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
-      });
-    </script>
 
   </template>
   
-    <script>
-      Polymer({
-        is: 'page-shell',
-        toggleDrawer: function() {
-          console.log('Toggling');
-          this.$.test.togglePanel();
-          console.log('Toggled');
-        }
-      });
-    </script>
-  </template>
+  <script>
+    Polymer({
+      is: 'page-shell',
+      ready: function() {
+        var title = this.$.title;
+        addEventListener('paper-header-transform', function(e) {
+          var d = e.detail;
+          var m = d.height - d.condensedHeight;
+          var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
+          Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
+        });
+      },
+      toggleDrawer: function() {
+        this.$.panelParent.togglePanel();
+      }
+    });
+  </script>
 </dom-module>

@@ -12,4 +12,9 @@ router.get('/resume', function(req, res, next) {
   res.json({"resume": "coming-soon"});
 });
 
+// This supports deep linking with the Angular 2 HTML 5 router
+router.all("/*", function(req, res, next) {
+  res.render('index');
+});
+
 module.exports = router;

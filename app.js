@@ -11,7 +11,7 @@ var bodyParser     = require('body-parser');
 /**
  * Import routes
  */
-var index = require('./routes/index');
+var routes = require('./routes');
 
 var app = express();
 
@@ -30,12 +30,7 @@ app.use(cookieParser());
 app.use('/client', express.static(__dirname + '/client'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-app.use('/', index);
-
-// This supports deep linking with the Angular 2 HTML 5 router
-app.all("/*", function(req, res, next) {
-  res.render('index');
-});
+app.use('/', routes);
 
 /**
  * Extraneous handler functions
