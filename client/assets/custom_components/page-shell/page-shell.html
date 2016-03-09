@@ -17,90 +17,77 @@
   <style>
   
     paper-drawer-panel {
-        font-family: Roboto;
-        background-color: #ececec;
+      font-family: Roboto;
+      background-color: #ececec;
     }
     
     paper-material {
-        background-color: #fff;
-        max-width: 640px;
-        width: 95%;
-        margin: 25px auto;
-        position: relative;
-    }
-
-    paper-fab {
-        position: absolute;
-        bottom: 2vh;
-        right: 2vw;
-    }
-    
-    .task-empty paper-item {
-        text-align: center;
-        padding: 25px;
-        color: #6f6f6f;
+      background-color: #fff;
+      max-width: 640px;
+      width: 95%;
+      margin: 25px auto;
+      position: relative;
     }
 
     img.profile {
-        height:50px;
-        width:50px;
-        border-radius: 50%;
-        border:2px solid white;
+      height:50px;
+      width:50px;
+      border-radius: 50%;
+      border:2px solid white;
     }
 
     paper-scroll-header-panel {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        /* background for toolbar when it is at its full size */
-        --paper-scroll-header-panel-full-header: {
-        background-color: blue;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      
+      /* background for toolbar when it is at its full size */
+      --paper-scroll-header-panel-full-header: {
+        background-color: #607D8B;
         background-size: cover;
         background-position: 50% 80% !important;
         background-repeat: no-repeat;
-        background-image: url(../../img/background.jpg);
-        };
-        /* background for toolbar when it is condensed */
-        --paper-scroll-header-panel-condensed-header: {
-        background-color: #2979FF;
-        background-color: rgba(100, 100, 100);
+        background-image: url(../../img/bg2.png);
+      };
+      
+      /* background for toolbar when it is condensed */
+      --paper-scroll-header-panel-condensed-header: {
         background-color: #607D8B;
-        };
+      };
     }
         
     paper-toolbar.tall {
-        background-color: transparent;
+      background-color: transparent;
     }
         
     paper-toolbar.tall #title {
-        font-size: 30px;
-        /*margin-left: 60px;*/
-        -webkit-transform-origin: left center;
-        transform-origin: left center;
-        /* Issue #15 */
-        isolation: isolate;
+      font-size: 30px;
+      /*margin-left: 60px;*/
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+      /* Issue #15 */
+      isolation: isolate;
     }
         
     paper-toolbar.tall iron-icon {
-        margin: 0 8px;
+      margin: 0 8px;
     }
 
     paper-toolbar#navheader{
-        background: tomato;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-image: url(../../img/menu_background.jpg);
+      background: tomato;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-image: url(../../img/menu_bg.jpg);
     }
 
     .content {
-        font-family:Roboto;
-        padding:20px;
-        border-left: 2px solid #ececec;
-        margin:0 auto;
-        width:auto;
+      font-family:Roboto;
+      padding:20px;
+      margin:0 auto;
+      width:auto;
     }
   </style>
 
@@ -122,7 +109,7 @@
       </paper-header-panel>
     
       <!-- Begin main -->
-      <paper-scroll-header-panel main condenses keep-condensed-header>
+      <paper-scroll-header-panel main condenses keep-condensed-header id="paperScroll">
         <paper-toolbar class="tall">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div class="flex"></div>
@@ -142,7 +129,9 @@
     Polymer({
       is: 'page-shell',
       ready: function() {
+        this.setBackground(); // set paper-scroll-header-panel to random background picture
         var title = this.$.title;
+        this.$.panelParent.forceNarrow = true;
         addEventListener('paper-header-transform', function(e) {
           var d = e.detail;
           var m = d.height - d.condensedHeight;
@@ -152,6 +141,11 @@
       },
       toggleDrawer: function() {
         this.$.panelParent.togglePanel();
+      },
+      setBackground: function() {
+        (Math.floor(Math.random() + .5)) ?
+        this.$.paperScroll.$.headerBg.style.backgroundImage = "url(/client/assets/img/bg.jpg)":
+        this.$.paperScroll.$.headerBg.style.backgroundImage = "url(/client/assets/img/bg2.png)";
       }
     });
   </script>

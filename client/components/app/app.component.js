@@ -25,7 +25,6 @@ System.register(['angular2/core', 'angular2/router', '../home/home.component'], 
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = "Dom Farolino";
                 }
                 AppComponent = __decorate([
                     core_1.Component({
