@@ -1,10 +1,6 @@
 # Mac OS X
 .DS_Store
 
-# Generated Files
-*.[oa]
-*.py[co]
-
 # Annoying tilde backup files
 *~
 
