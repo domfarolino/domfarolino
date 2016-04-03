@@ -4,8 +4,8 @@
   text-decoration: none;
 }
 
-paper-button {
-  margin-left:0;
+button {
+  margin:5px 0 0 0;
 }
 
 md-card {
