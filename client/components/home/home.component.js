@@ -1,4 +1,4 @@
-System.register(['angular2/core', '@angular2-material/button'], function(exports_1, context_1) {
+System.register(['angular2/core', '@angular2-material/button', '@angular2-material/card'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', '@angular2-material/button'], function(exports
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, button_1;
+    var core_1, button_1, card_1;
     var HomeComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', '@angular2-material/button'], function(exports
             },
             function (button_1_1) {
                 button_1 = button_1_1;
+            },
+            function (card_1_1) {
+                card_1 = card_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -29,7 +32,7 @@ System.register(['angular2/core', '@angular2-material/button'], function(exports
                         selector: 'home',
                         templateUrl: 'client/components/home/home.component.html',
                         styleUrls: ['client/components/home/home.component.css'],
-                        directives: [button_1.MdButton]
+                        directives: [button_1.MdButton, card_1.MdCard]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);
