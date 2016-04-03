@@ -32,7 +32,7 @@ System.register(['angular2/core', '@angular2-material/button', '@angular2-materi
                         selector: 'home',
                         templateUrl: 'client/components/home/home.component.html',
                         styleUrls: ['client/components/home/home.component.css'],
-                        directives: [button_1.MdButton, card_1.MdCard]
+                        directives: [button_1.MdButton, card_1.MD_CARD_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);
