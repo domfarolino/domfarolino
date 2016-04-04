@@ -29,6 +29,7 @@ app.use(cookieParser());
 
 app.use('/client', express.static(__dirname + '/client'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
+app.use('/sw.js', express.static(__dirname + '/sw.js'));
 
 app.use('/', routes);
 
