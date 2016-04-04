@@ -1,4 +1,4 @@
-var staticCacheName = 'dom-static-v1';
+var staticCacheName = 'dom-static-v2';
 //dfefwaf
 self.addEventListener('install', function(event) {
   console.log("Installing service worker");
