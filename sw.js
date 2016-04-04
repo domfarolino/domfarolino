@@ -27,8 +27,6 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-// Cache then network strategy
-// https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
 self.addEventListener('fetch', function(event) {
   if (event.request.method != 'GET') {
      event.respondWith(fetch(event.request));
@@ -38,7 +36,7 @@ self.addEventListener('fetch', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.match(event.request).then(function(response) {
         if (response) {
-          console.log("Got from cache");
+          console.log("Got " + response.url + "from cache");
           return response;
         }
         
