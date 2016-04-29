@@ -11,6 +11,9 @@
 
   <md-card>
     <h2>About Me</h2>
+    <div style="text-align:center;">
+      <div class="github-card" data-github="domfarolino" data-width="400" data-height="" data-theme="medium"></div>
+    </div>
     <p>I am currently a sophomore studying computer science at the University of Cincinnati.
       I have a passion for building applications other people can use to connect with each other.
       I'm a big advocate for the future of web apps and want to do my part in getting the web
@@ -24,10 +27,13 @@
     </p>
       
   </md-card>
-
+  
   <md-card>
     <h2>Recent Projects</h2>
-    <p>Coming soon (I've got projects, just working on compiling the list 😊)</p>
+    <p>Here's a condensed list of some of my GitHub repositories</p>
+    <div style="text-align:center;">
+      <div *ngFor="#repo of repos" class="github-card" [attr.data-github]="repo" data-width="100%" data-height="200" data-theme="default"></div>
+    </div>
   </md-card>
     
   <md-card>

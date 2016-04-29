@@ -25,8 +25,21 @@ System.register(['angular2/core', '@angular2-material/button', '@angular2-materi
             }],
         execute: function() {
             HomeComponent = (function () {
-                function HomeComponent() {
+                function HomeComponent(elementRef) {
+                    this.elementRef = elementRef;
+                    this.repos = [
+                        'domfarolino/angular2-login-seed',
+                        'domfarolino/derbyhacks-hackathon',
+                        'domfarolino/directory-tree-print',
+                        'domfarolino/domfarolino'
+                    ];
                 }
+                HomeComponent.prototype.ngAfterViewInit = function () {
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.src = "//cdn.jsdelivr.net/github-cards/latest/widget.js";
+                    this.elementRef.nativeElement.appendChild(s);
+                };
                 HomeComponent = __decorate([
                     core_1.Component({
                         selector: 'home',
@@ -34,7 +47,7 @@ System.register(['angular2/core', '@angular2-material/button', '@angular2-materi
                         styleUrls: ['client/components/home/home.component.css'],
                         directives: [button_1.MdButton, card_1.MD_CARD_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.ElementRef])
                 ], HomeComponent);
                 return HomeComponent;
             }());
