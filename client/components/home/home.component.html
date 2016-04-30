@@ -32,7 +32,9 @@
     <h2>Recent Projects</h2>
     <p>Here's a condensed list of some of my GitHub repositories</p>
     <div style="text-align:center;">
-      <div *ngFor="#repo of repos" class="github-card" [attr.data-github]="repo" data-width="100%" data-height="200" data-theme="default"></div>
+      <div *ngFor="#repo of repos" style="height:200px !important">
+        <div class="github-card" [attr.data-github]="repo" data-width="100%" data-height="" data-theme="default"></div>
+      </div>
     </div>
   </md-card>
     
