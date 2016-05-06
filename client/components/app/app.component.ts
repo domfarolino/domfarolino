@@ -1,5 +1,5 @@
-import { Component } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component } from '@angular/core';
+import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 
 import { HomeComponent } from '../home/home.component';
 
@@ -11,12 +11,10 @@ import { HomeComponent } from '../home/home.component';
   providers: [ROUTER_PROVIDERS]
 })
 
-@RouteConfig([
+@Routes([
   {
-    path: '/home',
-    name: 'Home',
-    component: HomeComponent,
-    useAsDefault: true
+    path: '/',
+    component: HomeComponent
   }
 ])
 

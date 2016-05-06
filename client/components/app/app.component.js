@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../home/home.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/router', '../home/home.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -35,12 +35,10 @@ System.register(['angular2/core', 'angular2/router', '../home/home.component'], 
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS]
                     }),
-                    router_1.RouteConfig([
+                    router_1.Routes([
                         {
-                            path: '/home',
-                            name: 'Home',
-                            component: home_component_1.HomeComponent,
-                            useAsDefault: true
+                            path: '/',
+                            component: home_component_1.HomeComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [])
