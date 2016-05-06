@@ -1,4 +1,4 @@
-var staticCacheName = 'dom-static-v2';
+var staticCacheName = 'dom-static-v1';
 self.addEventListener('install', function(event) {
   console.log("Installing service worker");
   // event.waitUntil(
@@ -41,6 +41,7 @@ self.addEventListener('fetch', function(event) {
         
         return fetch(event.request).then(function(response) {
           console.log("Got from server");
+          
           cache.put(event.request, response.clone());
           return response;
         });
