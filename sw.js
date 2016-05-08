@@ -1,10 +1,10 @@
-var staticCacheName = 'dom-static-v3';
+var staticCacheName = 'dom-static-v4';
 self.addEventListener('install', function(event) {
   console.log("Installing service worker");
   // event.waitUntil(
   //   caches.open(staticCacheName).then(function(cache) {
   //     return cache.addAll([
-  //       '/'
+  //       '/appshell'
   //     ]);
   //   })
   // );
@@ -35,14 +35,17 @@ self.addEventListener('fetch', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.match(event.request).then(function(response) {
         if (response) {
-          console.log("Got " + response.url + "from cache");
+          console.log("CACHE: " + response.url);
           return response;
         }
         
         return fetch(event.request).then(function(response) {
-          console.log("Got from server");
+          console.log("SERVER: " + event.request.url);
           
-          cache.put(event.request, response.clone());
+          if (event.request.url.indexOf('node_modules/') > -1 || event.request.url.indexOf('client/assets/') > -1) {
+            console.log("Caching: " + event.request.url);
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })

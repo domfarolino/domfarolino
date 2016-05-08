@@ -1,0 +1,23 @@
+{
+  "background_color": "#5682a3",
+  "name": "Dom Farolino",
+  "short_name": "Dom",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "96.png",
+      "sizes": "96",
+      "type": "image/png"
+    }
+  ]
+}
