@@ -3,12 +3,20 @@
   <base href="/">
     <title>Dom Farolino</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
     <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="192.png">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Dom Farolino">
 
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     
-
     <script src="./node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="./node_modules/systemjs/dist/system-polyfills.js"></script>
 
