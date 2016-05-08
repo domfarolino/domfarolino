@@ -1,4 +1,4 @@
-var staticCacheName = 'dom-static-v6';
+var staticCacheName = 'dom-static-v7';
 self.addEventListener('install', function(event) {
   console.log("Installing service worker");
   event.waitUntil(
