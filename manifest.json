@@ -1,23 +1,23 @@
 {
-  "background_color": "#5682a3",
   "name": "Dom Farolino",
   "short_name": "Dom",
-  "display": "standalone",
   "icons": [
     {
       "src": "192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "sizes": "192x192"
     },
     {
       "src": "144.png",
-      "sizes": "144x144",
-      "type": "image/png"
+      "sizes": "144x144"
     },
     {
       "src": "96.png",
-      "sizes": "96x96",
-      "type": "image/png"
+      "sizes": "96x96"
     }
-  ]
+  ],
+  "theme_color": "#3F51B5",
+  "background_color": "#F5F5F5", 
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/"
 }
