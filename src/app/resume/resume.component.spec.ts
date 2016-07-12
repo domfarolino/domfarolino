@@ -4,18 +4,22 @@ import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
-  beforeEach, beforeEachProviders,
+  addProviders, beforeEach, beforeEachProviders,
   describe, xdescribe,
   expect, it, xit,
-  async, inject, injectAsync
+  async, inject
 } from '@angular/core/testing';
 
 import { ResumeComponent } from './resume.component';
 import { Router } from '@angular/router';
 
 describe('Component: Resume', () => {
-  it('should create an instance', injectAsync(
-        [Router], (_router: Router) => {
+  beforeEach(() => {
+    addProviders([Router]);
+  });
+
+  it('should create an instance', inject([Router], (_router) => {
+    // actual test
     let component = new ResumeComponent(_router);
     expect(component).toBeTruthy();
   }));

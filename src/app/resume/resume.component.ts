@@ -17,8 +17,8 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
   }
   
-  goHome() {
-    this._router.navigate(['/']);
+  downloadResume() {
+    window.location.href = 'https://drive.google.com/uc?export=download&id=0B2HRo77RSb3FZzR6Vjk5OGFiN2c';
   }
 
 }
