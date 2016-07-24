@@ -15,7 +15,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private elementRef: ElementRef) {
     this.repos = [
       'domfarolino/angular2-login-seed',
+      'domfarolino/push-notifications',
       'domfarolino/derbyhacks-hackathon',
+      'domfarolino/blog',
       'domfarolino/directory-tree-print',
       'domfarolino/domfarolino'
     ];
