@@ -11,11 +11,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private elementRef: ElementRef) {
     this.repos = [
       'domfarolino/angular2-login-seed',
+      'domfarolino/algorithms',
       'domfarolino/push-notifications',
+      'domfarolino/modular-javascript',
       'domfarolino/derbyhacks-hackathon',
       'domfarolino/blog',
-      'domfarolino/directory-tree-print',
-      'domfarolino/domfarolino'
+      'domfarolino/directory-tree-print'
     ];
   }
 
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    var s = document.createElement("script");
+    const s = document.createElement("script");
     s.type = "text/javascript";
     s.src = "//cdn.jsdelivr.net/github-cards/latest/widget.js";
     this.elementRef.nativeElement.appendChild(s);

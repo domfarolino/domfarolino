@@ -13,7 +13,8 @@ export class ResumeComponent implements OnInit {
   }
 
   downloadResume() {
-    window.location.href = 'https://drive.google.com/uc?export=download&id=0B2HRo77RSb3FZzR6Vjk5OGFiN2c';
+    //https://drive.google.com/file/d/0B2HRo77RSb3FRGt5aEUwVzdHVWc/view?usp=sharing
+    window.location.href = 'https://drive.google.com/uc?export=download&id=0B2HRo77RSb3FRGt5aEUwVzdHVWc';
   }
 
 }
