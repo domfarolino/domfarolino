@@ -5,9 +5,9 @@
       <p>{{name}}</p>
       <p>{{email}}</p>
     </div>
-    
+
     <md-nav-list (click)="sidenav.close()">
-      
+
       <a md-list-item [routerLink]="['/']">
         <md-icon md-list-icon class="secondary">home</md-icon>
         <span md-line>Home</span>
@@ -23,10 +23,10 @@
         <span md-line>Resume</span>
         <span md-line class="secondary">View my resume in PDF form</span>
       </a>
-      
+
     </md-nav-list>
   </md-sidenav>
-  
+
   <md-toolbar color="primary">
     <button md-icon-button (click)="sidenav.open()">
       <md-icon>menu</md-icon>

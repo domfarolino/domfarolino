@@ -1,13 +1,9 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
-import { MdButton } from '@angular2-material/button';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 @Component({
-  moduleId: module.id,
   selector: 'home-component',
-  templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
-  directives: [MdButton, MD_CARD_DIRECTIVES]
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 
 export class HomeComponent implements OnInit, AfterViewInit {
@@ -22,11 +18,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       'domfarolino/domfarolino'
     ];
   }
-  
+
   ngOnInit() {
-    
+
   }
-  
+
   ngAfterViewInit() {
     var s = document.createElement("script");
     s.type = "text/javascript";
