@@ -1,10 +1,10 @@
-import { MigrationProjectPage } from './app.po';
+import { DomfarolinoPage } from './app.po';
 
-describe('migration-project App', function() {
-  let page: MigrationProjectPage;
+describe('domfarolino App', function() {
+  let page: DomfarolinoPage;
 
   beforeEach(() => {
-    page = new MigrationProjectPage();
+    page = new DomfarolinoPage();
   });
 
   it('should display message saying app works', () => {
