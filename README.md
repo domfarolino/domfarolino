@@ -3,6 +3,6 @@
 [![Dependency Status](https://david-dm.org/domfarolino/domfarolino.svg)](https://david-dm.org/domfarolino/domfarolino)
 [![devDependency Status](https://david-dm.org/domfarolino/domfarolino/dev-status.svg)](https://david-dm.org/domfarolino/domfarolino#info=devDependencies)
 
-Super simple personal site made with Node.js, Angular 2, and Polymer 1
+Simple personal site made with Angular 2
 
 [![logo](./logo.png)](https://github.com/domfarolino/domfarolino)
