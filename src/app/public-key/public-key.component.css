@@ -1,0 +1,11 @@
+md-card {
+  margin:0 auto;
+
+  word-wrap: break-word;
+  width:100%;
+  max-width:700px;
+}
+
+md-card-title {
+  font-weight: bold;
+}

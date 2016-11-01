@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ResumeComponent } from './resume/resume.component';
+import { PublicKeyComponent } from './public-key/public-key.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'resume',
     component: ResumeComponent
   },
+  {
+    path: 'public-key',
+    component: PublicKeyComponent
+  }
 ];
 
 @NgModule({
@@ -26,4 +31,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [ResumeComponent, HomeComponent];
+export const routedComponents = [ResumeComponent, PublicKeyComponent, HomeComponent];
