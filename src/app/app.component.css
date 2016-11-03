@@ -11,6 +11,18 @@ md-toolbar {
   background-color: #2E66AD !important;
 }
 
+md-card+md-card {
+  margin-top:40px;
+}
+
+md-card {
+  margin:0 auto;
+
+  word-wrap: break-word;
+  width:100%;
+  max-width:700px;
+}
+
 .secondary {
   color: rgba(0, 0, 0, .54);
 }
@@ -42,11 +54,12 @@ md-toolbar {
   padding:10px;
 }
 
-h2 {
+/*h2 {
   color:grey;
   color: #3F51E0;
   color: #009688;
-}
+  color: black;
+}*/
 
 .repeat-fade-in {
   animation: fadein 1s cubic-bezier(.27, 1.12, .49, .98);
