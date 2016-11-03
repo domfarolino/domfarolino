@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 @Component({
   selector: 'home-component',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['../app.component.css', './home.component.css']
 })
 
 export class HomeComponent implements OnInit, AfterViewInit {

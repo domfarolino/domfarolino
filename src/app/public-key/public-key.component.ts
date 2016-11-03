@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'public-key',
   templateUrl: './public-key.component.html',
-  styleUrls: ['./public-key.component.css']
+  styleUrls: ['../app.component.css', './public-key.component.css']
 })
 export class PublicKeyComponent implements OnInit {
 

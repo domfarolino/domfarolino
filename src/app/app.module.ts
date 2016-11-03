@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-import { MdCard, MdCardTitle } from '@angular2-material/card';
+import { MdCard, MdCardTitle, MdCardSubtitle } from '@angular2-material/card';
 import { MdToolbar, MdToolbarRow } from '@angular2-material/toolbar';
 import { MdSidenav, MdSidenavLayout } from '@angular2-material/sidenav';
 import { MdList, MdListItem } from '@angular2-material/list';
@@ -26,6 +26,7 @@ import { AppComponent } from './app.component';
     routedComponents,
     MdCard,
     MdCardTitle,
+    MdCardSubtitle,
     MdToolbar,
     MdToolbarRow,
     MdSidenav,
